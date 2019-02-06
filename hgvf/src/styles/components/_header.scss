@@ -1,0 +1,36 @@
+.header {
+  background: $off-black;
+  color: white;
+  margin-bottom: $m-size;
+  padding: $m-size;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 10% 10% 30% 30% 10% 10% 10%; 
+  grid-template-rows: 50% 50%;
+}
+//Block > Element > Modifier
+.header__title {
+  font-size: $l-size;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  margin: 0;
+}
+
+.header__subtitle {
+  color: $off-white;
+  font-size: $m-size;
+  font-weight: 500;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  margin: .5rem 0;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .header {
+    margin-bottom: $xl-size;
+  }
+}
