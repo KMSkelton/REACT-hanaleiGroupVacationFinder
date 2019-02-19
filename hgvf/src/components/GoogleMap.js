@@ -6,7 +6,7 @@ const mapStyles = {
   width: '80rem',
 };
 const containerStyle={
-  left: '50%',
+  left: '43%',
   top: '20rem'
 
 }
