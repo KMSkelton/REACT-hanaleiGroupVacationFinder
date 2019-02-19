@@ -7,7 +7,8 @@ const mapStyles = {
 };
 const containerStyle={
   left: '50%',
-  top: '22%'
+  top: '20rem'
+
 }
 export class MapContainer extends Component {
   render() {
