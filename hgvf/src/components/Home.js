@@ -1,9 +1,10 @@
 import React from 'react';
+import MapContainer from './GoogleMap'
 
 const Home = (props) => (
     <div className="home">
       <div className="container">
-        <h1>HOME</h1>
+        <MapContainer />
       </div>
     </div>
   )
