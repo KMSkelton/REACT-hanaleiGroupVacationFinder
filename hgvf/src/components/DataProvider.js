@@ -14,7 +14,7 @@ class DataProvider extends Component {
   }
 
   componentDidMount() {
-    fetch('http://127.0.0.1:8000/api/location', {
+    fetch('https://evening-bastion-83894.herokuapp.com/api/location/', {
       headers: {
         'Content-Type': 'Application/json'
     }})
