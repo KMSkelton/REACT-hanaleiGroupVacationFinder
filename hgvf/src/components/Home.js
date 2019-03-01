@@ -6,10 +6,8 @@ import Locations from './Locations'
 // content container on startup
 const Home = (props) => (
     <div className="home">
-      <div className="container">
-        <Locations />
-        <MapContainer />
-      </div>
+      <Locations />
+      <MapContainer />
     </div>
   )
 
