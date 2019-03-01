@@ -22,16 +22,16 @@ const Table = ({ data }) =>
           </tr>
         </thead>
         <tbody>
-          {data.map(el => (
-            <tr key={el.id}>
-              <td>{el.street_number}</td>
-              <td>{String( el.accessibility ) }</td>
-              <td>{el.price_per_week}</td>
-              <td>{el.max_guests}</td>
-              <td>{el.num_bathrooms}</td>
-              <td>{String( el.air_conditioning )}</td>
-              <td>{String( el.wifi )}</td>
-            </tr>
+        {data.map(el => (
+          <tr key={el.id}>
+                {['street_number',
+                'accessibility',
+                'price_per_week',
+                'max_guests',
+                'num_bathrooms',
+                'air_conditioning',
+                'wifi'].map(arrEl=> <td>{el[arrEl].toString()}</td>)}
+              </tr>
           ))}
         </tbody>
       </table>
