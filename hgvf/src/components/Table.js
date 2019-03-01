@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import key from 'weak-key';
 
 const Table = ({ data }) => 
   !data.length ? (
@@ -13,13 +12,25 @@ const Table = ({ data }) =>
       <table className='table is-stripped'>
         <thead>
           <tr>
-            {Object.entries(data[0]).map(el => <th key={key(el)}>{el[0]}</th>)}
+            <th>Address</th>
+            <th>Accessible</th>
+            <th>Weekly</th>
+            <th>Guests</th>
+            <th>Bathrooms</th>
+            <th>AC</th>
+            <th>WiFi</th>
           </tr>
         </thead>
         <tbody>
           {data.map(el => (
             <tr key={el.id}>
-              {Object.entries(el).map(el=> <td key={key(el)}>{el[1]}</td>)}
+              <td>{el.street_number}</td>
+              <td>{String( el.accessibility ) }</td>
+              <td>{el.price_per_week}</td>
+              <td>{el.max_guests}</td>
+              <td>{el.num_bathrooms}</td>
+              <td>{String( el.air_conditioning )}</td>
+              <td>{String( el.wifi )}</td>
             </tr>
           ))}
         </tbody>
