@@ -12,7 +12,6 @@ class DataProvider extends Component {
     loaded: false,
     placeholder: "Loading ..."
   }
-
   componentDidMount() {
     fetch('https://evening-bastion-83894.herokuapp.com/api/location/', {
       headers: {

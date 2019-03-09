@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom'; //listens for URL change
+import { Router } from 'react-router-dom'; //listens for URL change
 import history from './history'
 
 import './App.css';
@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <BrowserRouter 
+      <Router 
       basename={"/"} 
       history={history}
       >
@@ -27,7 +27,7 @@ class App extends Component {
           <Header />
           <Content /> 
         </React.Fragment>
-      </BrowserRouter>
+      </Router>
       </div>
     );
   }

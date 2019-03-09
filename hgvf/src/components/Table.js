@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import key from 'weak-key'
 
-const Table = ({ data }) => 
-  !data.length ? (
+
+const Table = (props) => 
+  !props.data.length ? (
     <p>Nothing to show</p>
   ) : (
     <div className='column'>
       <h2 className='subtitle'>
-        Showing <strong>{data.length} items</strong>
+        Showing <strong>{props.data.length} items</strong>
       </h2>
       <table className='table is-stripped'>
         <thead>
@@ -22,24 +24,25 @@ const Table = ({ data }) =>
           </tr>
         </thead>
         <tbody>
-        {data.map(el => (
-          <tr key={el.id}>
-                {['street_number',
+        {props.data.map(el => (
+          <tr>
+            <td><button onClick={() => props.update({lat: el.latitude, lng: el.longitude, addr: el.street_number})}>{el['street_number']}</button></td>
+                {[
                 'accessibility',
                 'price_per_week',
                 'max_guests',
                 'num_bathrooms',
                 'air_conditioning',
-                'wifi'].map(arrEl=> <td>{el[arrEl].toString()}</td>)}
+                'wifi'].map(arrEl=> <td key={key(el)}>{el[arrEl].toString()}</td>)}
               </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
-
   Table.propTypes = {
-    data: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired,
+    update: PropTypes.func
   };
 
   export default Table
