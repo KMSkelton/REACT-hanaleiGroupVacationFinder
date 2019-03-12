@@ -1,7 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import key from 'weak-key'
 
+const propertyCols = 
+[
+  'accessibility',
+  'price_per_week',
+  'max_guests',
+  'num_bathrooms',
+  'air_conditioning',
+  'wifi']
 
 const Table = (props) => 
   !props.data.length ? (
@@ -9,7 +16,7 @@ const Table = (props) =>
   ) : (
     <div className='column'>
       <h2 className='subtitle'>
-        Showing <strong>{props.data.length} items</strong>
+        Showing {props.data.length} items
       </h2>
       <table className='table is-stripped'>
         <thead>
@@ -24,22 +31,17 @@ const Table = (props) =>
           </tr>
         </thead>
         <tbody>
-        {props.data.map(el => (
-          <tr>
+        {props.data.map((el) => (
+          <tr key={el.id}>
             <td><button onClick={() => props.update({lat: el.latitude, lng: el.longitude, addr: el.street_number})}>{el['street_number']}</button></td>
-                {[
-                'accessibility',
-                'price_per_week',
-                'max_guests',
-                'num_bathrooms',
-                'air_conditioning',
-                'wifi'].map(arrEl=> <td key={key(el)}>{el[arrEl].toString()}</td>)}
+                {propertyCols.map(arrEl=><td key={el[arrEl]}>{el[arrEl].toString()}</td>)}
               </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
+
   Table.propTypes = {
     data: PropTypes.array.isRequired,
     update: PropTypes.func

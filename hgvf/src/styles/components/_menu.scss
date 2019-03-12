@@ -1,0 +1,8 @@
+.nav__menu-item, 
+.nav__submenu-item {
+  color: $plumeria;
+  padding: 0 1rem;
+  :visited {
+    color: $light-blue;
+  }
+}
