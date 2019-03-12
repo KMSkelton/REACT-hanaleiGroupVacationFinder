@@ -1,0 +1,17 @@
+.footer {
+  background: $off-white;
+  color: $purple;
+  font-family: $sansSerif;
+  p {
+    display: inline-block;
+  }
+  a {
+    display: inline-block;
+  }
+}
+
+.footer__container {
+  height: 5rem;
+  margin-top: 3rem;
+  width: 95%;
+}

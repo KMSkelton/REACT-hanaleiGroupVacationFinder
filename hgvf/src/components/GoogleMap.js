@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
-  height: '75rem',
-  width: '75rem',
+  height: '76.5rem',
+  width: '76rem',
 };
 const containerStyle={
-  left: '46%',
+  left: '45%',
   top: '20rem'
 
 }
