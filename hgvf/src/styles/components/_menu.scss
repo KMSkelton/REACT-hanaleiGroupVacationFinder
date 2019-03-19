@@ -1,8 +1,12 @@
-.nav__menu-item, 
-.nav__submenu-item {
-  color: $plumeria;
-  padding: 0 1rem;
-  :visited {
-    color: $light-blue;
+.nav__menu {
+  text-decoration: none;
+  a{
+    text-decoration: none;
   }
+  :visited {
+    text-decoration: none;
+  }
+}
+.nav__menu-about {
+  cursor: $tiny_hibiscus;
 }

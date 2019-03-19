@@ -8,7 +8,9 @@ const Menu = () => (
         <Link to="/">Home</Link>
       </li>
       <li className="nav__menu-item">
-        <Link to="/about">About</Link>
+        <Link 
+          to="/" 
+          className="nav__menu-about">About</Link>
         <Submenu />
       </li>
       <Link className="nav__menu-item" to="/contact">Contact</Link>
