@@ -62,8 +62,8 @@ class Contact extends Component {
           <h6>Please complete the form below, or email me directly: kristopher (at) kmskelton .com</h6>
           <form 
             id="contact_form" 
-            name="contact form" 
-            method="post" 
+            name="contact_form" 
+            method="POST" 
             netlify-honeypot="bot-field" 
             data-netlify = "true"
             noValidate
