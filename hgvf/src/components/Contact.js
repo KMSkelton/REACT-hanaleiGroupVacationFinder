@@ -65,7 +65,7 @@ class Contact extends Component {
             name="contact form" 
             method="post" 
             netlify-honeypot="bot-field" 
-            netlify = "true"
+            netlify
             noValidate
           >
             <p className="u-visually-hidden">
