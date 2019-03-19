@@ -118,8 +118,8 @@ class Contact extends Component {
             <label htmlFor="Message">Message:</label>
             <br />
             <textarea 
-              name="Message" 
-              id="Message" 
+              name="message" 
+              id="message" 
               rows="10" 
               value={message}
               onChange={this.handleChange}
@@ -128,7 +128,7 @@ class Contact extends Component {
               <input 
               type="submit" 
               name="submit" 
-              value="Submit" 
+              value="submit" 
               className="submit-button" />
               )
             }
