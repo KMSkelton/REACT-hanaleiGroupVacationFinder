@@ -60,14 +60,15 @@ class Contact extends Component {
             I would love to hear from you!
           </h5>
           <h6>Please complete the form below, or email me directly: kristopher (at) kmskelton .com</h6>
-          <form 
+          <form>
+          <input
+            type="hidden"            
             id="contact_form" 
             name="contact_form" 
             method="POST" 
-            netlify-honeypot="bot-field" 
-            data-netlify = "true"
             noValidate
-          >
+          />
+
             <p className="u-visually-hidden">
               <label className="u-visually-hidden">Don't complete this if you're human:
                 <input name="bot-field" /> </label>
