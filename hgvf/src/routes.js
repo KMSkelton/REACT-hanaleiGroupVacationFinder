@@ -1,6 +1,8 @@
-import Home from './components/Home'
 import About from './components/About'
+import Home from './components/Home'
 import Contact from './components/Contact'
+import Project from './components/Project'
+import Hanalei from './components/Hanalei'
 
 const routes = [
   {
@@ -15,7 +17,16 @@ const routes = [
   {
     path: "/Contact",
     content: Contact
-  }
+  },
+  {
+    path: "/hanalei",
+    content: Hanalei
+  },
+  {
+    path: "/project",
+    content: Project
+  },
+
 ]
 
 export default routes

@@ -1,0 +1,27 @@
+#contact-area {
+  margin-top: 1em;
+  margin-left: 0.3em;
+  width: 20em;
+}
+#contact-area input, #contact-area textarea {
+  width: 30em;
+}
+
+#contact-area input, #contact-area textarea {
+  margin: auto;
+  border: 0.2em solid #ccc;
+  width: 100%;
+  resize: none;
+}
+#contact-area textarea:focus, #contact-area input:focus {
+  border: 0.2em solid #900;
+}
+#contact-area input.submit-button {
+  margin: auto;
+  display: block;
+  width: 10em;
+}
+.u-visually-hidden {
+  position: absolute;
+  left: -999rem
+}

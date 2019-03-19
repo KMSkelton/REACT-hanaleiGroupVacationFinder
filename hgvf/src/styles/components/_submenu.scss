@@ -1,0 +1,22 @@
+.submenu__container {
+  color: $off-white;
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: [left] 40% [center] 10% 20% 30%; 
+  grid-template-rows: [top] 5rem repeat(4, 5rem);
+}
+.submenu__header {
+  align-self: center;
+  grid-column: left;
+  grid-row: top;
+  justify-self: start;
+}
+
+.submenu__text {
+  align-self: start;
+  grid-column: left / span 2;
+  grid-row: 2;
+  margin: 1rem 0 1rem 6rem;
+  padding: 0;
+  text-align: left;
+}

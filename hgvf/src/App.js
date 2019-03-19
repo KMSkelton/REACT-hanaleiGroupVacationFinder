@@ -3,9 +3,9 @@ import { Router } from 'react-router-dom'; //listens for URL change
 import history from './history'
 
 import './App.css';
-import Header from './components/Header'
 import Content from './components/Content'
 import Footer from './components/Footer'
+import Header from './components/Header'
 import './styles/styles.scss'
 
 class App extends Component {
