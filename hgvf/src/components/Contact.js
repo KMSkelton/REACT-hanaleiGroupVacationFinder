@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class Contact extends Component {
   constructor(props) {
     super(props)
@@ -9,6 +15,10 @@ class Contact extends Component {
       title: 'Contact Form',
       subtitle: "Large Group Vacation Rentals in the land called Hanalei", 
       canSubmit: false, 
+      name: '',
+      city: '',
+      email: '',
+      message: ''
     }
 
     this.drawCaptcha = this.drawCaptcha.bind(this)
@@ -51,7 +61,20 @@ class Contact extends Component {
       }      
     }
   }
+  
+  handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
   render() {
+    const { name, city, email, message} = this.state
     return (
       <div className="contact">
           <h1 className="contact_title">{this.state.title}</h1>
@@ -60,7 +83,7 @@ class Contact extends Component {
             I would love to hear from you!
           </h5>
           <h6>Please complete the form below, or email me directly: kristopher (at) kmskelton .com</h6>
-          <form>
+          <form onSubmit={this.handleSubmit}>
           <input
             type="hidden"            
             id="contact_form" 
@@ -75,13 +98,13 @@ class Contact extends Component {
                 <input name="bot-field" /> </label>
             </p>
             <label htmlFor="Name">Name:</label>
-            <input type="text" name="Name" id="Name" />
+            <input type="text" name="Name" id="Name" value={name} />
       
             <label htmlFor="City">City:</label>
-            <input type="text" name="City" id="City" />
+            <input type="text" name="City" id="City"  value={city} />
       
             <label htmlFor="Email">Email address:</label>
-            <input type="text" name="Email" id="Email" />
+            <input type="text" name="Email" id="Email" value={email} />
       
             <input 
               type="text" 
@@ -98,7 +121,12 @@ class Contact extends Component {
       
             <label htmlFor="Message">Message:</label>
             <br />
-            <textarea name="Message" id="Message" rows="10"></textarea>
+            <textarea 
+              name="Message" 
+              id="Message" 
+              rows="10" 
+              value={message}
+            ></textarea>
             {this.state.canSubmit && (
               <input 
               type="submit" 
