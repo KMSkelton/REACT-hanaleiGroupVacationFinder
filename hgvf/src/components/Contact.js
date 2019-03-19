@@ -64,6 +64,7 @@ class Contact extends Component {
           <input
             type="hidden"            
             id="contact_form" 
+            value="contact_form"
             name="contact_form" 
             method="POST" 
             noValidate
