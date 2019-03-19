@@ -91,15 +91,15 @@ class Contact extends Component {
                 <input name="bot-field" /> </label>
             </p>
             <label>
-            Your Name: <input type="text" name="Name" id="Name" value={name} onChange={this.handleChange} />
+            Your Name: <input type="text" name="name" id="name" value={name} onChange={this.handleChange} />
             </label>
             
             <label>
-            Your City: <input type="text" name="City" id="City"  value={city} onChange={this.handleChange} />
+            Your City: <input type="text" name="city" id="city"  value={city} onChange={this.handleChange} />
             </label>
       
             <label>
-            Your Email address: <input type="text" name="Email" id="Email" value={email} onChange={this.handleChange} />
+            Your Email address: <input type="text" name="email" id="email" value={email} onChange={this.handleChange} />
             </label>
       
             <input 
