@@ -73,6 +73,8 @@ class Contact extends Component {
 
     e.preventDefault();
   };
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
     const { name, city, email, message} = this.state
     return (
@@ -98,13 +100,13 @@ class Contact extends Component {
                 <input name="bot-field" /> </label>
             </p>
             <label htmlFor="Name">Name:</label>
-            <input type="text" name="Name" id="Name" value={name} />
+            <input type="text" name="Name" id="Name" value={name} onChange={this.handleChange} />
       
             <label htmlFor="City">City:</label>
-            <input type="text" name="City" id="City"  value={city} />
+            <input type="text" name="City" id="City"  value={city} onChange={this.handleChange} />
       
             <label htmlFor="Email">Email address:</label>
-            <input type="text" name="Email" id="Email" value={email} />
+            <input type="text" name="Email" id="Email" value={email} onChange={this.handleChange} />
       
             <input 
               type="text" 
@@ -126,6 +128,7 @@ class Contact extends Component {
               id="Message" 
               rows="10" 
               value={message}
+              onChange={this.handleChange}
             ></textarea>
             {this.state.canSubmit && (
               <input 
