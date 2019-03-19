@@ -1,6 +1,6 @@
 import About from './components/About'
 import Home from './components/Home'
-import Contact from './components/__Contact'
+import Contact from './components/Contact'
 import Project from './components/Project'
 import Hanalei from './components/Hanalei'
 
