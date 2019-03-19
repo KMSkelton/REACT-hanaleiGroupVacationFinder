@@ -73,6 +73,7 @@ class Contact extends Component {
 
     e.preventDefault();
   };
+
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
@@ -86,15 +87,6 @@ class Contact extends Component {
           </h5>
           <h6>Please complete the form below, or email me directly: kristopher (at) kmskelton .com</h6>
           <form onSubmit={this.handleSubmit}>
-          <input
-            type="hidden"            
-            id="contact_form" 
-            value="contact_form"
-            name="contact_form" 
-            method="POST" 
-            noValidate
-          />
-
             <p className="u-visually-hidden">
               <label className="u-visually-hidden">Don't complete this if you're human:
                 <input name="bot-field" /> </label>
