@@ -49,7 +49,6 @@ class Contact extends Component {
   }
   check = (input) => {
     var cap = this.removeSpaces(this.txtCaptcha.value);
-    console.log('input :',input);
     if (input.length === cap.length) {
       if (input !== cap) {
         this.clearCaptchaField()
@@ -91,14 +90,17 @@ class Contact extends Component {
               <label className="u-visually-hidden">Don't complete this if you're human:
                 <input name="bot-field" /> </label>
             </p>
-            <label htmlFor="Name">Name:</label>
-            <input type="text" name="Name" id="Name" value={name} onChange={this.handleChange} />
+            <label>
+            Your Name: <input type="text" name="Name" id="Name" value={name} onChange={this.handleChange} />
+            </label>
+            
+            <label>
+            Your City: <input type="text" name="City" id="City"  value={city} onChange={this.handleChange} />
+            </label>
       
-            <label htmlFor="City">City:</label>
-            <input type="text" name="City" id="City"  value={city} onChange={this.handleChange} />
-      
-            <label htmlFor="Email">Email address:</label>
-            <input type="text" name="Email" id="Email" value={email} onChange={this.handleChange} />
+            <label>
+            Your Email address: <input type="text" name="Email" id="Email" value={email} onChange={this.handleChange} />
+            </label>
       
             <input 
               type="text" 
