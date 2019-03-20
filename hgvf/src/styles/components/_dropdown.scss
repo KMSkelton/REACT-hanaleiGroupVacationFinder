@@ -1,3 +1,4 @@
+// Layout and styles for menu and submenu navigation
 /*
 This is the extracted copied part responsible for showing & hiding the submenu.
 */
@@ -14,18 +15,14 @@ This is the extracted copied part responsible for showing & hiding the submenu.
 
 /*
 Layout styles.
+alphabetically ordered. Element > id > class > child elements > state (hover)
 */
-$submenu-width: 16rem;
 
 body {
   margin: 0;
   font-family: $sansSerif;
   font-size: $m-size;
   line-height: 1.5;
-}
-
-.menu-container {
-  text-align: center;
 }
 
 nav {
@@ -39,7 +36,7 @@ nav {
 
 .nav {
   align-self: center;
-  background: $dark-blue;
+  background: $blue;
   color: $off-white;
   display: grid;
   grid-row: 1 /2;
@@ -55,18 +52,28 @@ nav {
 }
   
 .nav__menu {
-  line-height: 45px;
   font-weight: 700;
+  line-height: 45px;
   text-transform: uppercase;
+  text-decoration: none;
+  a{
+    text-decoration: none;
+  }
+  &:hover {
+    background: $lava-gray;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
-  
+.nav__menu-about {
+  cursor: $tiny_hibiscus;
+} 
 .nav__menu-item {
   display: inline-block;
   position: relative;
-
   &:hover {
     background-color: $blue;
-
     .nav__submenu {
       display: block;
     }
@@ -74,16 +81,25 @@ nav {
 }
     
 .nav__submenu {
-  font-weight: 300;
-  text-transform: none;
-  display: none;
-  position: absolute;
-  width: $submenu-width;
   background-color: $blue;
+  display: none;
+  font-weight: 700;
+  position: absolute;
+  text-transform: none;
+  width: $submenu-width;
 }
     
 .nav__submenu-item {
+  align-items: center;
+  display: flex;
+  height: $l-size;
+  justify-content: center;
   &:hover {
-    background: $off-black;
+    background: $lava-gray;
+    border: 1px dashed $blue;
   }
+}
+
+.menu-container {
+  text-align: center;
 }
