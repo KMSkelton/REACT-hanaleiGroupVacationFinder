@@ -28,9 +28,6 @@ class Submenu extends Component {
         <li className="nav__submenu-item ">
           <Link to="/hanalei">Why Hanalei</Link>
         </li>
-        <li className="nav__submenu-item ">
-          <Link to="/jobs">Jobs</Link>
-        </li>
       </ul>
     )
   }

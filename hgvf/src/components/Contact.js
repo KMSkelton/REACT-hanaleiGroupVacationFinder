@@ -69,8 +69,6 @@ class Contact extends Component {
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
-
-    e.preventDefault();
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -79,16 +77,17 @@ class Contact extends Component {
     const { name, city, email, message} = this.state
     return (
       <div className="contact">
+        <div id="contact-area">
           <h1 className="contact_title">{this.state.title}</h1>
-          <div id="contact-area">
-          <h5>
+          <h3>
             I would love to hear from you!
-          </h5>
-          <h6>Please complete the form below, or email me directly: kristopher (at) kmskelton .com</h6>
+          </h3>
+          <h4>Please complete the form below, or email me directly: kristopher (at) kmskelton .com</h4>
           <form onSubmit={this.handleSubmit}>
             <p className="u-visually-hidden">
               <label className="u-visually-hidden">Don't complete this if you're human:
-                <input name="bot-field" /> </label>
+                <input name="bot-field" /> 
+              </label>
             </p>
             <label>
             Your Name: <input type="text" name="name" id="name" value={name} onChange={this.handleChange} />
@@ -101,19 +100,20 @@ class Contact extends Component {
             <label>
             Your Email address: <input type="text" name="email" id="email" value={email} onChange={this.handleChange} />
             </label>
-      
-            <input 
-              type="text" 
-              readOnly="readonly" 
-              id="txtCaptcha"
-              ref={(input) => {this.txtCaptcha = input}}
-            />
-            <input type="button" id="btnrefresh" value="Refresh Numbers" onClick={this.drawCaptcha} />
-            <input type="text" 
-              placeholder="Enter numbers as shown above to prove you're not a robot" 
-              onInput={(e) => {this.check(e.target.value)}} 
-              id="txtInput" 
-            />
+            <div className="captcha">
+              <input 
+                type="text" 
+                readOnly="readonly" 
+                id="txtCaptcha"
+                ref={(input) => {this.txtCaptcha = input}}
+              />
+              <input type="button" id="btnRefresh" value="Refresh Numbers" onClick={this.drawCaptcha} />
+              <input type="text" 
+                placeholder="    Enter numbers as shown above to activate submit button" 
+                onInput={(e) => {this.check(e.target.value)}} 
+                id="txtInput" 
+              />            
+            </div>
       
             <label htmlFor="Message">Message:</label>
             <br />
