@@ -10,7 +10,9 @@ const Project = () => (
         <br></br><br></br>
         The data for each vacation rental is stored in a PostgreSQL database hosted on
         Heroku. The data store has a Django REST Framework front end with user 
-        authentication and authorization.
+        authentication and authorization. I'm currently using a hobby-tier despite this being an 
+        enterprise grade web app. That means there may be some lag the first time you load the page
+        while Heroku wakes up the data server.
         <br></br><br></br>
         This project was inspired by a vacation I helped plan. Each of us had different needs
         and wants for the places we chose to stay. Being able to see each location's 

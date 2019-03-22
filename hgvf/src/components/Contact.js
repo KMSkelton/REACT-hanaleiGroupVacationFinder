@@ -9,12 +9,12 @@ const encode = (data) => {
 class Contact extends Component {
   constructor(props) {
     super(props)
-    this.txtCaptcha = React.createRef();
 
     this.state = {
       title: 'Contact Form',
       subtitle: "Large Group Vacation Rentals in the land called Hanalei", 
       canSubmit: false, 
+      txtCaptcha: '',
       name: '',
       city: '',
       email: '',
@@ -27,7 +27,7 @@ class Contact extends Component {
 
   }
   componentDidMount() {
-    if (this.txtCaptcha) {
+    if (this.state.txtCaptcha.length < 7) {
       this.drawCaptcha();
     } else {
       return false;
@@ -42,13 +42,15 @@ class Contact extends Component {
     var f = Math.ceil(Math.random() * 9) + '';
     var g = Math.ceil(Math.random() * 9) + '';
     var code = a + ' ' + b + ' ' + c + ' ' + d + ' ' + e + ' ' + f + ' ' + g;
-    this.txtCaptcha.value = code
+    this.setState({
+      txtCaptcha: code
+    })
   }
   removeSpaces = (string) => {
     return string.split(' ').join('');
   }
   check = (input) => {
-    var cap = this.removeSpaces(this.txtCaptcha.value);
+    var cap = this.removeSpaces(this.state.txtCaptcha);
     if (input.length === cap.length) {
       if (input !== cap) {
         this.clearCaptchaField()
@@ -105,8 +107,8 @@ class Contact extends Component {
                 type="text" 
                 readOnly="readonly" 
                 id="txtCaptcha"
-                ref={(input) => {this.txtCaptcha = input}}
-              />
+                value={this.state.txtCaptcha} 
+              /> 
               <input type="button" id="btnRefresh" value="Refresh Numbers" onClick={this.drawCaptcha} />
               <input type="text" 
                 placeholder="    Enter numbers as shown above to activate submit button" 

@@ -1,3 +1,4 @@
+// Default/sample created by CRA
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

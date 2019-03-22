@@ -8,7 +8,12 @@ const propertyCols =
   'max_guests',
   'num_bathrooms',
   'air_conditioning',
-  'wifi']
+  'wifi'
+]
+
+const updateProps = (props, el) => {
+  return props.update({lat: el.latitude, lng: el.longitude, addr: el.street_number})
+}
 
 const Table = (props) => 
   !props.data.length ? (
@@ -33,14 +38,16 @@ const Table = (props) =>
         <tbody>
         {props.data.map((el) => (
           <tr key={el.id}>
-            <td><button onClick={() => props.update({lat: el.latitude, lng: el.longitude, addr: el.street_number})}>{el['street_number']}</button></td>
-                {propertyCols.map(arrEl=><td key={el[arrEl]}>{el[arrEl].toString()}</td>)}
+            <td><button onClick={() => updateProps()}>{el['street_number']}</button></td>
+                {propertyCols.map((arrEl, index)=><td key={index}>{el[arrEl].toString()}</td>)}
               </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
+// I really tried to find a way around using the index as a key anti-pattern, but with three boolean values I'm bound to 
+// have at least one key conflict. 
 
   Table.propTypes = {
     data: PropTypes.array.isRequired,
