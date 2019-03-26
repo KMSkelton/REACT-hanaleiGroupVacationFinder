@@ -38,7 +38,7 @@ const Table = (props) =>
         <tbody>
         {props.data.map((el) => (
           <tr key={el.id}>
-            <td><button onClick={() => updateProps()}>{el['street_number']}</button></td>
+            <td><button onClick={() => updateProps(props, el)}>{el['street_number']}</button></td>
                 {propertyCols.map((arrEl, index)=><td key={index}>{el[arrEl].toString()}</td>)}
               </tr>
           ))}
