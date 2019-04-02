@@ -70,7 +70,7 @@ class Contact extends Component {
       body: encode({ "form-name": "contact_form", ...this.state })
     })
       .then(() => alert("Success!"))
-      .catch(error => console.error(error));
+      .catch(error => console.log(error));
   };
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
