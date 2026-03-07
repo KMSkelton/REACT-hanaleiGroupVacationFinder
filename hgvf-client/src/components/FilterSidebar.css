@@ -1,0 +1,109 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem 1.25rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.sidebar__count {
+  font-size: 0.75rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.2rem 0.5rem;
+  border-radius: 99px;
+}
+
+.sidebar__section {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar__input,
+.sidebar__select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #111;
+  background: white;
+  transition: border-color 0.15s;
+}
+
+.sidebar__input:focus,
+.sidebar__select:focus {
+  outline: none;
+  border-color: #2d6a4f;
+}
+
+.sidebar__hint {
+  font-size: 0.72rem;
+  color: #2d6a4f;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+.sidebar__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.sidebar__checkbox input {
+  accent-color: #2d6a4f;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.sidebar__reset {
+  width: 100%;
+  padding: 0.6rem;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-top: 0.5rem;
+}
+
+.sidebar__reset:hover {
+  border-color: #2d6a4f;
+  color: #2d6a4f;
+}

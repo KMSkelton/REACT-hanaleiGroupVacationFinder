@@ -1,0 +1,32 @@
+.map-panel {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.map-panel__map {
+  height: 100%;
+  width: 100%;
+}
+
+.map-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  min-width: 140px;
+}
+
+.map-popup strong {
+  font-size: 0.85rem;
+  color: #111;
+}
+
+.map-popup span {
+  color: #6b7280;
+}
+
+.map-popup span:last-child {
+  color: #2d6a4f;
+  font-weight: 600;
+}
