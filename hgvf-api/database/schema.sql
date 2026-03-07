@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS properties (
+    id              SERIAL PRIMARY KEY,
+    name            VARCHAR(200) NOT NULL,
+    street_number   VARCHAR(200) NOT NULL,
+    neighborhood    VARCHAR(100) NOT NULL,
+    latitude        NUMERIC(10, 7) NOT NULL,
+    longitude       NUMERIC(10, 7) NOT NULL,
+    property_type   VARCHAR(50) NOT NULL DEFAULT 'house',
+    description     TEXT,
+    num_bedrooms    INTEGER NOT NULL,
+    num_bathrooms   NUMERIC(3,1) NOT NULL,
+    max_guests      INTEGER NOT NULL,
+    sleeping_capacity INTEGER NOT NULL,
+    price_per_week  NUMERIC(10, 2) NOT NULL,
+    min_nights      INTEGER NOT NULL DEFAULT 7,
+    accessibility   BOOLEAN NOT NULL DEFAULT FALSE,
+    air_conditioning BOOLEAN NOT NULL DEFAULT FALSE,
+    wifi            BOOLEAN NOT NULL DEFAULT TRUE,
+    images          TEXT[] DEFAULT '{}'
+);
