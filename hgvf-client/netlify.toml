@@ -1,0 +1,7 @@
+[build]
+  base = "hgvf-client"
+  command = "npm run build"
+  publish = "hgvf-client/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
