@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
-console.long("API BASE: ", API_BASE)
+console.log("API BASE: ", API_BASE)
 
 export function useProperties(filters) {
   const [properties, setProperties] = useState([])
